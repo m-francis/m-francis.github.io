@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  {% seo %}
+  <script src="/assets/js/font-awesome-d7744ff4d4.js" crossorigin="anonymous"></script>
+  {% if jekyll.environment == "production" %}
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyD7WemzPpRYZqod1BdnqClU5v6X4ltZwSM",
+      authDomain: "mfrancis-dev.firebaseapp.com",
+      projectId: "mfrancis-dev",
+      storageBucket: "mfrancis-dev.appspot.com",
+      messagingSenderId: "968126211361",
+      appId: "1:968126211361:web:0555aaf118b28329d44a60",
+      measurementId: "G-9NH3W0MKEE"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  {% endif %}
+</head>
+
+<body>
+  <div class="container-wrapper">
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </div>
+</body>
+
+</html>

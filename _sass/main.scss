@@ -1,0 +1,110 @@
+$header-height: 2rem;
+$footer-height: 5rem;
+$metadata-color: #c4c4c4;
+$title-font-size: 1.2rem;
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/assets/css/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+body {
+  width: 48rem;
+  margin: auto;
+  padding: auto;
+  background-color: #303030;
+  font-family: JetBrainsMono;
+  color: #f3f4f5;
+}
+
+.container-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: $metadata-color;
+  font-size: 0.8rem;
+  height: $footer-height;
+  line-height: $footer-height;
+}
+
+.footer-left,
+.footer-right {
+  float: left;
+  width: 50%;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+a {
+  color: #f3f4f5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline;
+  color: $metadata-color;
+}
+
+li h1 {
+  font-size: $title-font-size;
+  padding-left: 1.5rem;
+}
+
+.post h1 {
+  font-size: $title-font-size;
+  margin-bottom: 0rem;
+}
+
+.post h2 {
+  position: relative;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.post h2:before {
+  position: absolute;
+  left: -1.2rem;
+  content: "~";
+  color: #fcba03;
+}
+
+.post .metadata {
+  color: $metadata-color;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.post .content {
+  font-size: 0.9rem;
+}
