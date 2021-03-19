@@ -9,15 +9,15 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 📂 setup
+      - name: 📂 Checkout Repository
         uses: actions/checkout@v2
 
-      - name: 💎 setup ruby
+      - name: 💎 Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
 
-      - name: 🔨 install dependencies & build site
+      - name: 🔨 Install Dependencies & Build
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
@@ -56,8 +56,8 @@ jobs:
       - name: 🚀 Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MFRANCIS_DEV }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MFRANCIS_DEV }}"
           channelId: live
           projectId: mfrancis-dev
         env:
