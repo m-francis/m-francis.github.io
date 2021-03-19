@@ -6,4 +6,6 @@ This is a Jekyll project.
 
 Checkout the project and run the following:
 
+```
 bundle exec jekyll serve --livereload
+```
