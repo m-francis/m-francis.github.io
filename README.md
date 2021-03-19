@@ -28,7 +28,7 @@ bundle exec jekyll build
 
 This will populate contents in ```_site``` directory.
 
-To build for production (includes Firebase config) set the environment variable:
+To build for production set the environment variable:
 
 ```
 JEKYLL_ENV=production bundle exec jekyll build
