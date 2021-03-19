@@ -1,0 +1,39 @@
+@font-face { font-family: "JetBrainsMono"; src: url("/assets/css/JetBrainsMono-Regular.woff2") format("woff2"); }
+
+body { max-width: 48rem; margin: auto; padding: auto; padding-left: 5vh; padding-right: 5vh; background-color: #303030; font-family: JetBrainsMono; color: #f3f4f5; }
+
+.container-wrapper { position: relative; min-height: 100vh; }
+
+.content-wrapper { padding-top: 5vh; padding-bottom: 10vh; }
+
+footer { width: 100%; position: absolute; bottom: 0; color: #c4c4c4; font-size: 1.5vh; height: 10vh; line-height: 10vh; }
+
+.footer-left, .footer-right { float: left; }
+
+.footer-left { text-align: left; margin-right: 5vh; }
+
+.footer-right { text-align: right; }
+
+a { color: #f3f4f5; text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+ul { list-style-type: none; margin: 0; padding: 0; }
+
+li h1, h2, h3, h4, h5, h6 { display: inline; color: #c4c4c4; }
+
+li h1 { font-size: 3vh; padding-left: 2vh; }
+
+li h5 { font-size: 1.5vh; }
+
+.post h1 { font-size: 3vh; margin-bottom: 0vh; }
+
+.post h2 { position: relative; font-size: 3vh; }
+
+.post h2:before { position: absolute; left: -3vh; content: "~"; color: #fcba03; }
+
+.post .metadata { color: #c4c4c4; padding-bottom: 2vh; font-size: 1.5vh; }
+
+.post .content { font-size: 2vh; }
+
+/*# sourceMappingURL=styles.css.map */
