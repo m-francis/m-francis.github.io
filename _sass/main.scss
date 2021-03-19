@@ -1,7 +1,8 @@
-$header-height: 2rem;
-$footer-height: 5rem;
+$header-height: 5vh;
+$footer-height: 10vh;
 $metadata-color: #c4c4c4;
-$title-font-size: 1.2rem;
+$meta-font-size: 1.5vh;
+$title-font-size: 3vh;
 
 @font-face {
   font-family: "JetBrainsMono";
@@ -9,9 +10,11 @@ $title-font-size: 1.2rem;
 }
 
 body {
-  width: 48rem;
+  max-width: 48rem;
   margin: auto;
   padding: auto;
+  padding-left: 5vh;
+  padding-right: 5vh;
   background-color: #303030;
   font-family: JetBrainsMono;
   color: #f3f4f5;
@@ -32,7 +35,7 @@ footer {
   position: absolute;
   bottom: 0;
   color: $metadata-color;
-  font-size: 0.8rem;
+  font-size: $meta-font-size;
   height: $footer-height;
   line-height: $footer-height;
 }
@@ -40,11 +43,11 @@ footer {
 .footer-left,
 .footer-right {
   float: left;
-  width: 50%;
 }
 
 .footer-left {
   text-align: left;
+  margin-right: 5vh;
 }
 
 .footer-right {
@@ -78,33 +81,36 @@ h6 {
 
 li h1 {
   font-size: $title-font-size;
-  padding-left: 1.5rem;
+  padding-left: 2vh;
+}
+
+li h5 {
+  font-size: $meta-font-size;
 }
 
 .post h1 {
   font-size: $title-font-size;
-  margin-bottom: 0rem;
+  margin-bottom: 0vh;
 }
 
 .post h2 {
   position: relative;
-  margin-top: 2rem;
-  font-size: 1rem;
+  font-size: 3vh;
 }
 
 .post h2:before {
   position: absolute;
-  left: -1.2rem;
+  left: -3vh;
   content: "~";
   color: #fcba03;
 }
 
 .post .metadata {
   color: $metadata-color;
-  padding-bottom: 1rem;
-  font-size: 0.9rem;
+  padding-bottom: 2vh;
+  font-size: $meta-font-size;
 }
 
 .post .content {
-  font-size: 0.9rem;
+  font-size: 2vh;
 }
