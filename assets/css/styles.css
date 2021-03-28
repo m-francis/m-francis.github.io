@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face { font-family: "JetBrainsMono"; src: url("/assets/css/JetBrainsMono-Regular.woff2") format("woff2"); }
 
-body { max-width: 48rem; margin: auto; padding: auto; padding-left: 5vh; padding-right: 5vh; background-color: #303030; font-family: JetBrainsMono; color: #f3f4f5; }
+body { max-width: 60rem; margin: auto; padding: auto; padding-left: 5vh; padding-right: 5vh; background-color: #303030; font-family: JetBrainsMono; color: #f3f4f5; }
 
 .container-wrapper { position: relative; min-height: 100vh; }
 
