@@ -75,10 +75,19 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Build and Push
+      - name: Build and Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           context: .
           platforms: linux/amd64,linux/arm/v7
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mfrancisdev:latest
+
+      - name: Push to AWS ECR
+        id: ecr
+        uses: jwalton/gh-ecr-push@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+          image: ${{ secrets.DOCKER_HUB_USERNAME }}/mfrancisdev:latest
