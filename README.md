@@ -41,3 +41,37 @@ This is a great feature provided by Firebase, allowing to validate its configura
 ```
 firebase emulators:start
 ```
+
+## Build and Push to Docker Hub
+
+This website can be built as a Docker image for two platforms.
+
+For amd64:
+
+```
+sudo docker buildx build --platform linux/amd64 -t agitatedkepler/mfrancisdev:amd64 . --push
+```
+
+...then on Ubuntu:
+
+```
+sudo docker run -p 3000:80 --pull always agitatedkepler/mfrancisdev:amd64
+```
+
+For arm/v7:
+
+```
+sudo docker buildx build --platform linux/arm/v7 -t agitatedkepler/mfrancisdev:armv7l . --push
+```
+
+...then on Raspberry Pi:
+
+```
+docker run -p 3000:80 --pull always agitatedkepler/mfrancisdev:armv7l
+```
+
+When the Docker image has been built using GitHub Actions the `latest` one can be run on either architecture:
+
+```
+docker run -p 3000:80 --pull always agitatedkepler/mfrancisdev:latest
+```
