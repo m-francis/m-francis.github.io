@@ -86,7 +86,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
         id: login-ecr
 
-      - name: Build and Push to Docker Hub
+      - name: Build and Push
         uses: docker/build-push-action@v2
         with:
           context: .
