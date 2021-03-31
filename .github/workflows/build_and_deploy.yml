@@ -86,7 +86,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
         id: login-ecr
         with:
-          registries: ${{ secrets.AWS_REGISTRY }}
+          registries: ${{ secrets.AWS_ACCOUNT_ID }}
 
       - name: Build and Push to Docker Hub
         uses: docker/build-push-action@v2
@@ -96,4 +96,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/mfrancisdev:latest
-            ${{ steps.login-ecr.outputs.registry }}/mfrancisdev:latest
+            ${{ secrets.AWS_REGISTRY }}/mfrancisdev:latest
