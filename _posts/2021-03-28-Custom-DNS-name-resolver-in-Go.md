@@ -128,7 +128,7 @@ In addition to querying the configured name servers these tools also examine `/e
 <h2>Writing a DNS name resolver</h2>
 
 Even though this is a playground implementation there are a couple of things I want to learn by doing this:
-<ul style="list-style-type: square; padding-left: 4rem">
+<ul>
 <li>The protocol of DNS name resolution</li>
 <li>How to send and receive a UDP packet in Go</li>
 <li>How to do bitwise operations in Go</li>
