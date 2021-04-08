@@ -10,7 +10,7 @@ $title-font-size: 3vh;
 }
 
 body {
-  max-width: 60rem;
+  max-width: 80rem;
   margin: auto;
   padding: auto;
   padding-left: 5vh;
@@ -117,4 +117,10 @@ li h5 {
 
 .post a {
   text-decoration: underline;
+}
+
+.post ul {
+  list-style-type: square;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
 }
