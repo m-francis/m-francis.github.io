@@ -2,7 +2,7 @@
 author: mfrancis
 ---
 
-How I host this website, explained.
+How I host this website, briefly explained.
 
 <h2>The Code</h2>
 
@@ -30,7 +30,7 @@ Great. Now we need some IP address(-es) we can use in our resource records.
 
 <h2>Firebase</h2>
 
-They say Firebase is there to help both small and large enterprises to run their apps. I can't say I'm the target audience.. however given their Free Plan I won't say no to at least trying it out -- which I suppose is the point :).
+They say Firebase is there to help both small and large enterprises to run their apps. I can't say I'm the target audience... however given their Free Plan I won't say no to at least trying it out -- which I suppose is the point :).
 
 I was pleasantly surprised how easy and seamless it was to onboard Firebase. I used their CLI to setup the project in a matter of minutes. You can follow the [setup guide](https://firebase.google.com/docs/web/setup) to try this out for yourself.
 
