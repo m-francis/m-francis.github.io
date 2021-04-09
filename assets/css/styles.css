@@ -39,6 +39,8 @@ li h5 { font-size: 1.5vh; }
 
 .post a { text-decoration: underline; }
 
+.post ul { list-style-type: square; padding-left: 4rem; padding-bottom: 2rem; }
+
 /* PrismJS 1.23.0
 https://prismjs.com/download.html#themes=prism-twilight&languages=clike+bash+go+java+python&plugins=command-line */
 /** prism.js Twilight theme Based (more or less) on the Twilight theme originally of Textmate fame. @author Remy Bach */

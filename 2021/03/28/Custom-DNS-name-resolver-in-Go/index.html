@@ -29,6 +29,7 @@
 		<meta property="twitter:title" content="Custom DNS Name Resolver in Go" />
 		<script type="application/ld+json">
 			{
+				"author": { "@type": "Person", "name": "mfrancis" },
 				"description": "Name resolution is arguably the most important function of DNS and is critical to the runtime of networking services.",
 				"url": "/2021/03/28/Custom-DNS-name-resolver-in-Go/",
 				"@type": "BlogPosting",
@@ -39,7 +40,6 @@
 					"@type": "WebPage",
 					"@id": "/2021/03/28/Custom-DNS-name-resolver-in-Go/"
 				},
-				"author": { "@type": "Person", "name": "mfrancis" },
 				"@context": "https://schema.org"
 			}
 		</script>
@@ -280,7 +280,7 @@ Host google.com not found: 5(REFUSED)</code>
 							Even though this is a playground implementation there are a couple
 							of things I want to learn by doing this:
 						</p>
-						<ul style="list-style-type: square; padding-left: 4rem">
+						<ul>
 							<li>The protocol of DNS name resolution</li>
 							<li>How to send and receive a UDP packet in Go</li>
 							<li>How to do bitwise operations in Go</li>
