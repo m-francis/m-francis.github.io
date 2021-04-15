@@ -122,7 +122,7 @@ Now let's run it on a Raspberry Pi!
 
 I want to build my website only once, hence I want to be able to build the Docker image on the same build server I build my website on.
 
-I also do not want to export the image and <i>push</i> it across the network using rsync or similar mechanisms. Instead I wan't it to be <i>pulled</i> hence the simplest way then would be to integrate with a container registry such as [Docker Hub](https://docs.docker.com/get-started/04_sharing_app/) allowing us to pull the image from anywhere.
+I also do not want to export the image and <i>push</i> it across the network using rsync or similar mechanisms. Instead I want it to be <i>pulled</i> hence the simplest way then would be to integrate with a container registry such as [Docker Hub](https://docs.docker.com/get-started/04_sharing_app/) allowing us to pull the image from anywhere.
 
 Let's start by installing Docker on Raspbian by following [these Docker docs](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script). Once done we can see it's functional by running the hello-world image:
 
@@ -489,7 +489,7 @@ Having gone through this exercise we have learnt how to do multi-platform Docker
 
 <h2>Running in AWS</h2>
 
-To get the Docker image to AWS I'm going with a similar architecture to my set-up for Docker Hub and Raspberry Pi. I'll first integrate with Amazon ECR (Elastic Container Registry) using the support offered by the official [AWS for GitHub Actions](https://github.com/aws-actions) tooling. When pushing to ECR it's important the tag incudes the full path to the registry.
+To get the Docker image to AWS I'm going with a similar architecture to my set-up for Docker Hub and Raspberry Pi. I'll first integrate with Amazon ECR (Elastic Container Registry) using the support offered by the official [AWS for GitHub Actions](https://github.com/aws-actions) tooling. When pushing to ECR it's important the tag includes the full path to the registry.
 
 <i>Side note: this tooling worked as long as I tried to push to a private ECR repository. When I tried it against a public one (with fewer restrictions and more generous allowances) I always ended up with `401 Not Authorized` even after setting fairly wide permissions for the IAM user.</i>
 
@@ -513,7 +513,7 @@ To limit the scope of the user we'll define the resource it is authorized on:
 <code>"Resource": "arn:aws:ecr:$REGION:$ACCOUNT_ID:repository/mfrancisdev"</code>
 </pre>
 
-Once created Amazon IAM provides a password for the user. It's important we do not expose this publicy, hence we should store it as a secret in GitHub. We can then refer to the secrets in GitHub Actions:
+Once created Amazon IAM provides a password for the user. It's important we do not expose this publicly, hence we should store it as a secret in GitHub. We can then refer to the secrets in GitHub Actions:
 
 <pre class="language-bash">
 <code>- name: Configure AWS Credentials
@@ -550,7 +550,7 @@ This will push images into Amazon ECR every time the GitHub pipeline runs. Howev
 
 Now that the image is in Amazon ECR we have a choice on how to run it. I won't go into much detail as there's plenty of resources available, but in summary I will go with Amazon ECS (Elastic Container Service) because it's simpler than Amazon EKS (Elastic Kubernetes Service). With ECS we have a choice between AWS Fargate (serveless) and EC2 (self-managed compute). I'm going with Fargate for this because it's simplest.
 
-I must say the UX in Amazon is not great. It almost feels like an internal platform built by some large enterprise where the only way to get things done is to know the people to ask questions :) I guess that's one more reason why "Cloud Architects" are now in demand.
+I must say the UX in Amazon is not great. It almost feels like an internal platform built by some large enterprise where the only way to get things done is to know the people to ask questions to :) I guess that's one more reason why "Cloud Architects" are now in demand.
 
 After starting the service and task in Fargate we get a private and public IP which I could verify returned me the content of the website. However, my website is under `.dev` domain so I need a certificate. Thankfully there's Amazon Certificate Manager which provides these things out of the box; I requested a certificate for `*.aws.mfrancis.dev`.
 
