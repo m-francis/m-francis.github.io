@@ -75,3 +75,39 @@ When the Docker image has been built using GitHub Actions the `latest` one can b
 ```
 docker run -p 3000:80 --pull always agitatedkepler/mfrancisdev:latest
 ```
+
+## Run contaimer image locally fetching it from Amazon ECR
+
+Create local Python virtualenv:
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip setuptools wheel
+pip install awscli
+```
+
+Configure the AWS environment (get Access key ID and Secret Access key using AWS Console):
+
+```
+ aws configure
+```
+
+Get login details and login using podman:
+
+```
+aws ecr get-login-password --region ap-southeast-1 | podman login --username AWS --password-stdin <account>.dkr
+.ecr.ap-southeast-1.amazonaws.co
+```
+
+Run the image:
+
+```
+podman run -p 3000:80 --pull always <account>.dkr.ecr.ap-southeast-1.amazonaws.com/mfrancisdev:latest
+```
+
+Test the image:
+
+```
+http://localhost:3000/
+```
