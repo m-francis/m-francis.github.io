@@ -12,7 +12,7 @@ Clone the project and run the following:
 bundle exec jekyll serve --livereload
 ```
 
-By default it servers on loopback. To make it accessible from your IP on other devices:
+By default it serves on loopback. To make it accessible from your IP on other devices:
 
 ```
 bundle exec jekyll serve --livereload -H 0.0.0.0
