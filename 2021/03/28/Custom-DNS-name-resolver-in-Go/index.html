@@ -30,16 +30,16 @@
 		<script type="application/ld+json">
 			{
 				"author": { "@type": "Person", "name": "mfrancis" },
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "/2021/03/28/Custom-DNS-name-resolver-in-Go/"
+				},
 				"description": "Name resolution is arguably the most important function of DNS and is critical to the runtime of networking services.",
 				"url": "/2021/03/28/Custom-DNS-name-resolver-in-Go/",
 				"@type": "BlogPosting",
 				"headline": "Custom DNS Name Resolver in Go",
 				"dateModified": "2021-03-28T00:00:00+00:00",
 				"datePublished": "2021-03-28T00:00:00+00:00",
-				"mainEntityOfPage": {
-					"@type": "WebPage",
-					"@id": "/2021/03/28/Custom-DNS-name-resolver-in-Go/"
-				},
 				"@context": "https://schema.org"
 			}
 		</script>
@@ -909,7 +909,9 @@ func sendAndReceivePacket(nameserver string, reqB []byte) []byte {
 				</div>
 			</div>
 			<footer>
-				<div class="footer-left">Copyright &copy; 2021 mfrancis</div>
+				<div class="footer-left">
+					Build executed on 2023-09-16 03:49:20 +0000
+				</div>
 				<div class="footer-right">
 					<a href="https://www.github.com/m-francis"
 						><i class="fab fa-github fa-2x"></i
